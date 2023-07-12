@@ -15,6 +15,7 @@ const creandoOrderBook = async (req, res) => {
     const orderBook = new OrderBook(req.body);
     const orderBookAlmacenado = await orderBook.save();
     res.json(orderBookAlmacenado);
+    console.log("Creado");
   } catch (error) {
     res.status(500).json({ mensaje: "Error al crear el OrderBook" });
   }
