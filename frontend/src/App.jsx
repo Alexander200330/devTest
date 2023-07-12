@@ -1,10 +1,11 @@
+import Table from "./components/Table"
 
 function App() {
   
 
   return (
     <>
-      <h1>Hola mundo</h1>
+      <Table />
     </>
   )
 }
