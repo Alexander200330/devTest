@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Item from './Item';
+import Header from './Header';
 
 const Table = () => {
   const [socket, setSocket] = useState(null);
@@ -27,6 +28,8 @@ const Table = () => {
   }, [data]);
 
   return (
+    <>
+    <Header />
     <div className="container" style={{ marginTop: '50px', textAlign: 'center', maxHeight: '500px', overflowY: 'auto' }}>
       <table style={{ margin: '0 auto', width: '800px', tableLayout: 'fixed' }}>
         <thead>
@@ -47,6 +50,7 @@ const Table = () => {
         </tbody>
       </table>
     </div>
+    </>
   );
 };
 
