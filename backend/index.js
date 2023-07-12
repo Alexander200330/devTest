@@ -15,6 +15,7 @@ app.use("/api/orderbooks", orderBookRoutes)
 
 const PORT = process.env.PORT || 4000
 
-app.listen(PORT, () => {
+const servidor = app.listen(PORT, () => {
     console.log(`Corriendo servidor en el puerto ${PORT}`);
 })
+

@@ -4,8 +4,7 @@ import Item from './Item';
 const Table = () => {
   const [socket, setSocket] = useState(null);
   const [data, setData] = useState([]);
-
-  console.log(data);
+  const [combinedData, setCombinedData] = useState([]);
 
   useEffect(() => {
     const newSocket = new WebSocket("wss://ws.bitmex.com/realtime?subscribe=instrument,orderBookL2_25:XBTUSD");
@@ -23,8 +22,12 @@ const Table = () => {
     };
   }, []);
 
+  useEffect(() => {
+    setCombinedData((prevCombinedData) => [...data.slice(0, 10), ...prevCombinedData]);
+  }, [data]);
+
   return (
-    <div className="container" style={{ marginTop: '50px', textAlign: 'center' }}>
+    <div className="container" style={{ marginTop: '50px', textAlign: 'center', maxHeight: '500px', overflowY: 'auto' }}>
       <table style={{ margin: '0 auto', width: '800px', tableLayout: 'fixed' }}>
         <thead>
           <tr>
@@ -38,7 +41,7 @@ const Table = () => {
           </tr>
         </thead>
         <tbody>
-          {data.map((item) => (
+          {combinedData.map((item) => (
             <Item key={item.id} item={item} />
           ))}
         </tbody>
