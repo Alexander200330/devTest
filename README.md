@@ -1,31 +1,25 @@
-# devTest
-We want to understand better how good you are integrating several technologies to provide a solid solution, this is a sample project that will help ilustrate just that.
+# Aplicación MERN 
 
-**Exchange rate per symbol**
+Esta es una aplicación  desarrollada utilizando la tecnología MERN (MongoDB, Express, React, Node.js). El objetivo de esta aplicación es mostrar datos en tiempo real provenientes de una API utilizando websockets.
 
-We would like to generate a site that provides exchange information and general information of the sample platform selected to the end users.
+Puedes encontrar la aplicación en producción [aquí](https://dev-test-bitmex.netlify.app). Ten en cuenta que solo el frontend está en producción, ya que el backend consume muchos recursos debido a las solicitudes a la base de datos. El código del backend está documentado en el archivo `Table.jsx` en la línea 37 por si deseas probarlo localmente.
 
-1. Fork this project and invite me (starl1n), you are going to work on the branch you just created and submit your changes there.
-2. Create a connection to these endpoints using the required technology:
+## Características
 
-**Socket endpoint:** 
-wss://ws.bitmex.com/realtime?subscribe=instrument,orderBookL2_25:XBTUSD
+- La aplicación utiliza React en el frontend para renderizar la interfaz de usuario y mostrar los datos en una tabla.
+- Se utiliza la biblioteca `websocket` para establecer una conexión WebSocket con la API de BitMEX y recibir datos en tiempo real.
+- Los datos recibidos se almacenan en una base de datos MongoDB utilizando el backend construido con Express y Node.js. Sin embargo, esta parte del backend no está en producción debido a limitaciones de recursos.
+- El backend expone una API para recibir los datos del frontend y almacenarlos en la base de datos MongoDB.
 
-For reference: https://www.bitmex.com/app/wsAPI
+## Author
 
-**WEB API:**
-https://www.bitmex.com/api/explorer/#!/Announcement/Announcement_get
+Alexander De Jesús Ventura Mejía
 
-3. Present the data in a human readable fashion (ReactJS/Blazor/Etc)
-4. Store the records received from the connection into a database SQL Server/MariaDB/MongoDB/Postgres/
-5. In a separated section of the solution provide a way to search or filter for the results stored in the Database of choice sorted by date in decending order, maybe you can add any sort of filter here too.
+## Instalación
 
+1. Clona el repositorio:
 
-**This test will evaluate:**
-1. Web Socket/API consumption capabilities
-2. Knowledge of API integration between databases/API
-3. Also will show capabilities of handling the frontend technologies
-4. Familiarity with the language
+```bash
+git clone https://github.com/Alexander200330/devTest.git
 
 
-If you are unfamiliar with any part of the request, is fine, you can skip it **(but make a comment )**
